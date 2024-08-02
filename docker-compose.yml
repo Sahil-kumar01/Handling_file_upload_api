@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  fastapi:
+    build: "./"  # Build context is the current directory
+
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - ./static/uploads:/app/static/uploads
+      - ./static/converted:/app/static/converted
+    environment:
+      - MONGODB_URL=mongodb+srv://sahilkumarktp16:S%40hil2003@mongoy.q4auz7c.mongodb.net/videos
